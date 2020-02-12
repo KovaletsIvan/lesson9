@@ -18,10 +18,20 @@ $("h3:last").before($div);
 
 // Task 4
 
-$("input").on("click", function() {
+/*$("input").on("click", function() {
   $("input").each(function() {
     if ($(this).prop("checked") == !true) {
       $(this).prop("disabled", "true");
     }
   });
 });
+*/
+function checkIn() {
+  let $n = $("input:checked").length;
+  if ($n == 3) {
+    $("input").prop("disabled", "true");
+  }
+  console.log($n);
+}
+
+$("input").on("click", checkIn);
